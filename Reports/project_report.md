@@ -29,6 +29,10 @@ The target variable represents:
 | Non-Disaster | 4,342 | 57.03% |
 | Disaster | 3,271 | 42.97% |
 
+### Keyword Analysis
+
+The 15 most frequent keywords in disaster-related tweets were identified using keyword frequency analysis. A bar chart was created to visualize the most frequently occurring keywords and understand common terms associated with disaster-related tweets.
+
 ## 3. Data Preprocessing
 
 The following preprocessing operations were performed:
@@ -136,12 +140,19 @@ Four additional sample tweets were tested as a basic prediction sanity check. Al
 The trained Logistic Regression model and TF-IDF vectorizer were saved using Joblib.
 
 Saved files:
+
 - `logistic_regression_model.pkl`
 - `tfidf_vectorizer.pkl`
 
 A Flask web application was developed to allow users to enter a tweet and receive a classification result.
 
-The application was tested locally with multiple sample tweets. The predictions matched the expected categories in the tested examples.
+The application was initially tested locally with multiple sample tweets. It was then deployed publicly using Render.
+
+**Live Application:** https://disaster-tweet-classification-nlp.onrender.com
+
+The deployed application was tested using disaster-related and non-disaster-related sample tweets. Both predictions returned the expected categories.
+
+The application uses Gunicorn as its production web server and retrieves the saved model and TF-IDF vectorizer for making predictions.
 
 ## 9. Conclusion
 
@@ -149,16 +160,15 @@ This project demonstrates an end-to-end NLP classification workflow, from data e
 
 Among the evaluated models, the original Logistic Regression model achieved the strongest test F1-score and was selected for deployment.
 
-The project also demonstrates the use of TF-IDF, cross-validation, hyperparameter tuning, model persistence, and Flask integration.
+The project also demonstrates the use of TF-IDF, cross-validation, hyperparameter tuning, model persistence, Flask integration, and public cloud deployment using Render.
 
 ## 10. Limitations
 
 - The dataset contains 7,613 records rather than the 10,000 mentioned in the project instructions.
 - Predictions depend on patterns learned from the supplied dataset.
 - The four additional sample tweets provide only a basic sanity check, not proof of performance on all unseen data.
-- The application is running locally and has not been deployed to a public production server.
 - The model should not be used as the sole basis for real-world emergency decisions.
 
 ## 11. Tools and Technologies
 
-Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TF-IDF, Logistic Regression, Multinomial Naive Bayes, Random Forest, Joblib, and Flask.
+Python, Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn, TF-IDF, Logistic Regression, Multinomial Naive Bayes, Random Forest, Joblib, Flask, Gunicorn, GitHub, and Render.
