@@ -74,6 +74,16 @@ A Flask application allows users to enter a tweet and receive a prediction:
 - Disaster
 - Non-Disaster
 
+### Live Demo
+
+Try the deployed application here:
+
+**[Disaster Tweet Classification — Live App](https://disaster-tweet-classification-nlp.onrender.com)**
+
+The application is hosted on Render. The free service may take a little longer to respond after periods of inactivity.
+
+
+
 ### Run the Application
 
 Install dependencies:
